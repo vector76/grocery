@@ -7,7 +7,7 @@
   --muted: #888;
   --accent: #4a9eff;
   --danger: #ff5252;
-  --tap: 52px;
+  --tap: 44px;
 }
 
 * { box-sizing: border-box; }
@@ -133,7 +133,7 @@ li:last-child { border-bottom: none; }
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
+  padding: 4px 14px;
   min-height: var(--tap);
   background: none;
   border: none;
