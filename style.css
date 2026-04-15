@@ -62,7 +62,6 @@ body {
 #add-form {
   display: flex;
   gap: 8px;
-  margin-bottom: 8px;
 }
 
 #add-input {
@@ -133,7 +132,7 @@ li:last-child { border-bottom: none; }
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 4px 14px;
+  padding: 0 14px;
   min-height: var(--tap);
   background: none;
   border: none;

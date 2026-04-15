@@ -174,6 +174,14 @@ function render() {
   });
   if (currentTab === 'edit') renderEdit();
   else renderShop();
+  if (editingId !== null && currentTab === 'edit' && !(document.activeElement instanceof HTMLInputElement)) {
+    const input = document.querySelector('.edit-panel input');
+    if (input) {
+      input.focus();
+      input.select();
+      input.scrollIntoView({ block: 'nearest' });
+    }
+  }
 }
 
 function renderEdit() {
@@ -229,7 +237,6 @@ function renderCommonEditPanel(c) {
     if (e.key === 'Enter') { e.preventDefault(); doSave(); }
     else if (e.key === 'Escape') { editingId = null; render(); }
   });
-  setTimeout(() => { input.focus(); input.select(); }, 0);
   return el('div', { class: 'edit-panel' },
     input,
     el('button', { class: 'primary', type: 'button', onclick: doSave }, 'Save'),
@@ -267,7 +274,6 @@ function renderOneoffEditPanel(item) {
     if (e.key === 'Enter') { e.preventDefault(); doSave(); }
     else if (e.key === 'Escape') { editingId = null; render(); }
   });
-  setTimeout(() => { input.focus(); input.select(); }, 0);
   return el('div', { class: 'edit-panel' },
     input,
     el('button', { class: 'primary', type: 'button', onclick: doSave }, 'Save'),

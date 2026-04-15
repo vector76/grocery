@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#121212">
   <title>Groceries</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="tabs">
-    <button class="tab" data-tab="edit" type="button">Edit</button>
+    <button class="tab active" data-tab="edit" type="button">Edit</button>
     <button class="tab" data-tab="shop" type="button">Shop</button>
   </nav>
 
   <main>
-    <section class="screen" data-screen="edit">
+    <section class="screen active" data-screen="edit">
       <form id="add-form">
         <input id="add-input" type="text" placeholder="Add item&hellip;" autocomplete="off" autocapitalize="sentences" enterkeyhint="done">
         <button type="submit" aria-label="Add">+</button>
