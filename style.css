@@ -1,0 +1,243 @@
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-2: #2a2a2a;
+  --text: #e8e8e8;
+  --muted: #888;
+  --accent: #4a9eff;
+  --danger: #ff5252;
+  --tap: 52px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0 16px 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 12px 0 16px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  font-size: 17px;
+  background: var(--surface);
+  color: var(--muted);
+  border: none;
+  border-radius: 10px;
+  min-height: var(--tap);
+}
+
+.tab.active {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+#add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#add-input {
+  flex: 1;
+  padding: 0 14px;
+  height: var(--tap);
+  font-size: 17px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--surface-2);
+  border-radius: 10px;
+}
+
+#add-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#add-form button {
+  width: var(--tap);
+  height: var(--tap);
+  font-size: 26px;
+  line-height: 1;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin: 24px 0 8px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+li {
+  border-bottom: 1px solid var(--bg);
+}
+
+li:last-child { border-bottom: none; }
+
+.empty {
+  padding: 16px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+}
+
+.row-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  min-height: var(--tap);
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  border: 2px solid var(--muted);
+  flex-shrink: 0;
+  font-size: 14px;
+  line-height: 1;
+  color: white;
+}
+
+.row.on .indicator,
+.row.checked .indicator {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.row.checked .name {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.name {
+  flex: 1;
+  word-break: break-word;
+}
+
+.edit-btn {
+  padding: 0 16px;
+  min-height: var(--tap);
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.edit-panel {
+  padding: 12px 14px;
+  background: var(--surface-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--bg);
+}
+
+.edit-panel input {
+  flex: 1 1 100%;
+  padding: 0 12px;
+  height: 44px;
+  font-size: 17px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--surface);
+  border-radius: 8px;
+}
+
+.edit-panel input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.edit-panel button {
+  padding: 0 14px;
+  height: 40px;
+  font-size: 15px;
+  background: var(--surface);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-panel button.primary { background: var(--accent); color: white; }
+.edit-panel button.danger { color: var(--danger); }
+
+.clear-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.clear-actions button {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  background: var(--surface);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+  min-height: var(--tap);
+  cursor: pointer;
+}
+
+.clear-actions button#clear-all { color: var(--danger); }
